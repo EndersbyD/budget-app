@@ -1,17 +1,28 @@
-import CardList from "./CardList";
+import { Card, Checkbox } from "@mui/joy";
 
-const Card = ({title, description}: {title:string, description:string}) => {
+type Props = {
+  title: string;
+  category: string;
+  amount: number;
+  date: string;
+};
+
+const BillCard = ({ title, category, amount, date }: Props) => {
   return (
-    <div className="min-w-lg mx-auto bg-white shadow-md rounded-md overflow-hidden">
-      <div className="p-4">
-        <h2 className="text-xl font-bold text-gray-600 mb-3">{title}</h2>
-        <p className="divide-y divide-gray-300 text-gray-700">
-          {description}
-        </p>
-        <CardList />
+    <Card className="w-full h-full">
+      <div className="flex flex-row space-around">
+        <Checkbox className="w-8" />
+        <div className="flex-1 flex-col">
+          <p className="text-gray-500">{title}</p>
+          <p className="text-gray-500">Category: {category}</p>
+        </div>
+        <div className="flex-1 flex-col">
+          <p className="text-gray-500 text-right">{`Amount: £${amount}`}</p>
+          <p className="text-gray-500 text-right">Date: {date}</p>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
-export default Card;
+export default BillCard;
