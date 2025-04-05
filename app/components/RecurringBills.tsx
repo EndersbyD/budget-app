@@ -62,7 +62,7 @@ function RecurringBills() {
                 id: bills.length + 1,
                 title: "New Bill",
                 category: "Utils",
-                amount: 0,
+                amount: Math.floor(Math.random() * 100) + 1,
                 date: "2nd",
               },
               ...bills,
