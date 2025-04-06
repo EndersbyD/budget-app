@@ -4,6 +4,7 @@ import Drawer from "@mui/joy/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import RecurringBills from "./components/RecurringBills";
+import Months from "./components/Months";
 
 export default function Home() {
   const [openDrwawer, setOpenDrawer] = useState(false);
@@ -27,8 +28,8 @@ export default function Home() {
           <section id="recurring-bills" className="w-full h-106">
             <RecurringBills />
           </section>
-          <section id="months" className="w-full h-50 bg-yellow-500">
-            <h2 className="text-xl font-semibold">Section 4</h2>
+          <section id="months" className="w-full h-50 mt-12">
+            <Months />
           </section>
         </div>
         <div className="w-150 mb-6 gap-4 flex flex-col justify-between">
