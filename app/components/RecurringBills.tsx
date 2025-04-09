@@ -56,6 +56,7 @@ function RecurringBills() {
       <div className="flex flex-row justify-between items-center">
         <h2 className="text-xl font-semibold">Recurring Bills</h2>
         <IconButton
+          data-testid="add-bill-button"
           onClick={() =>
             setBills([
               {

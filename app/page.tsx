@@ -2,26 +2,39 @@
 import { IconButton } from "@mui/joy";
 import Drawer from "@mui/joy/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import RecurringBills from "./components/RecurringBills";
 import Months from "./components/Months";
 
 export default function Home() {
-  const [openDrwawer, setOpenDrawer] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-grey-500 p-6 flex flex-row items-center justify-between">
-        <IconButton className="" onClick={() => setOpenDrawer(true)}>
+        <IconButton
+          data-testid="menu-button"
+          className=""
+          onClick={() => setOpenDrawer(true)}
+        >
           <MenuIcon />
         </IconButton>
+        <Drawer data-testid="menu-drawer" anchor="left" open={openDrawer}>
+          <div data-testid="menu-drawer-content" className="p-4">
+            Menu Drawer
+            <IconButton
+              data-testid="menu-drawer-close-button"
+              onClick={() => setOpenDrawer(false)}
+              className="top-1 left-70 absolute"
+            >
+              <CloseIcon />
+            </IconButton>
+          </div>
+        </Drawer>
         <h1 className="text-2xl font-bold">Budget App</h1>
         <p>Better than a spreadsheet at least!</p>
       </header>
-      <Drawer
-        anchor="left"
-        open={openDrwawer}
-        onClose={() => setOpenDrawer(false)}
-      ></Drawer>
 
       <main className="flex-1 bg-gray-100 p-6 flex flex-row justify-between gap-4">
         <div className="w-256 mb-6 gap-4 flex flex-col justify-between">

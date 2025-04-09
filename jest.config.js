@@ -10,7 +10,7 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom', // Use jsdom for testing React components
   testPathIgnorePatterns: ['/node_modules/', '/.next/'], // Ignore these paths
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'], // Supported extensions
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Setup file for additional configurations
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'], // Setup file for additional configurations
   moduleNameMapper: {
     // Handle module aliases (from tsconfig.json)
     '^@/(.*)$': '<rootDir>/$1',
